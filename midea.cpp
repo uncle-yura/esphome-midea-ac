@@ -235,7 +235,7 @@ void Midea::set_status(int mode, int temp, int power, int speed, int hswing, int
     transmite_data.buffer[11] = 0x42 | (power<0 ? status.state : power);
     transmite_data.buffer[12] = (mode<0 ? status.mode << 5 : mode <<5) | (temp<0 ? status.setpoint-16 : temp - 16);
     transmite_data.buffer[13] = (speed<0 ? status.speed : speed);
-    transmite_data.buffer[17] = 0x30 | (hswing<0 ? status.hswing ? 0x0C : 0x00 : hswing) | (vswing<0 ? status.vswing ? 0x03 : 0x00 : vswing);
+    transmite_data.buffer[17] = 0x30 | (hswing<0 ? status.hswing ? 0x03 : 0x00 : hswing*0x03) | (vswing<0 ? status.vswing ? 0x0C : 0x00 : vswing*0x0C);
     // Set control byte
     transmite_data.buffer[32] = millis()/1000;
 
