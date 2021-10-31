@@ -74,7 +74,7 @@ void Midea::loop() {
         default:
             if(receive_data.size>0 && receive_data.buffer[receive_data.size-1]==0xAA) {
                 receive_data.buffer[receive_data.size] = c;
-                readBytes(receive_data.buffer+2, c-1);
+                read_array(receive_data.buffer+2, c-1);
                 receive_data.size = c+1;
                 
                 log_data(&receive_data);
