@@ -57,7 +57,7 @@ Create an ESPHome YAML configuration with the following sections:
    sole ESP8266 hardware UART
  * `switch: - switch component for manual control and feedback`
  * `sensor: - temperature sensor component for automatic control`
- * `climate: - climate component ащк setting the automatic operation of the air conditioner `
+ * `climate: - climate component for setting the automatic operation of the air conditioner `
  
 All climate control actions are as follows:
 ```yaml
